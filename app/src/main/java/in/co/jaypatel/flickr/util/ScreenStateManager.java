@@ -23,12 +23,9 @@ public class ScreenStateManager {
     private final ViewGroup root;
     private final View stateRoot;
 
-    @BindView(R.id.stateProgress)
-    private ProgressWheel stateProgress;
-    @Nullable @BindView(R.id.stateImage)
-    private ImageView stateImage;
-    @Nullable @BindView(R.id.stateMessage)
-    private TextView stateMessage;
+    @BindView(R.id.stateProgress) ProgressWheel stateProgress;
+    @Nullable @BindView(R.id.stateImage) ImageView stateImage;
+    @Nullable @BindView(R.id.stateMessage) TextView stateMessage;
 
     public ScreenStateManager(ViewGroup root) {
         this.root = root;

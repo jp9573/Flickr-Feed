@@ -42,23 +42,23 @@ public class DetailActivity
     private DetailEvent detailEvent;
 
     @BindView(R.id.pager)
-    private ViewPager pager;
+    ViewPager pager;
     @BindView(R.id.tvOwner)
-    private TextView tvOwner;
+    TextView tvOwner;
     @BindView(R.id.tvTitle)
-    private TextView tvTitle;
+    TextView tvTitle;
     @BindView(R.id.tvDate)
-    private TextView tvDate;
+    TextView tvDate;
     @BindView(R.id.tvViewCount)
-    private TextView tvViewCount;
+    TextView tvViewCount;
     @BindView(R.id.lnrFooter)
-    private View lnrFooter;
+    View lnrFooter;
     @BindView(R.id.ivClose)
-    private View ivClose;
+    View ivClose;
     @BindView(R.id.ivInfo)
-    private View ivInfo;
+    View ivInfo;
     @BindView(R.id.ivShare)
-    private View ivShare;
+    View ivShare;
 
     public static Intent createIntent(Context context, int index, List<PhotoModel> items) {
         return new Intent(context, DetailActivity.class)
@@ -113,7 +113,7 @@ public class DetailActivity
     }
 
     @OnPageChange(R.id.pager)
-    private void onPageSelected(int position) {
+    void onPageSelected(int position) {
         //showLoadingDialog();
         tvOwner.setText(R.string.loading);
         tvTitle.setText(R.string.loading);
@@ -147,7 +147,7 @@ public class DetailActivity
         int value = lnrFooter.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE;
         Timber.i("pagerClick: " + value);
         lnrFooter.setVisibility(value);
-        ivClose.setVisibility(value);
+        //ivClose.setVisibility(value);
         tvOwner.setVisibility(value);
     }
 

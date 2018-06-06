@@ -1,5 +1,6 @@
 package in.co.jaypatel.flickr.adapter;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,15 +11,17 @@ import java.util.List;
 
 import in.co.jaypatel.flickr.R;
 import in.co.jaypatel.flickr.model.ImageSize;
+import in.co.jaypatel.flickr.model.PhotoInfoModel;
 import in.co.jaypatel.flickr.model.PhotoModel;
 import in.co.jaypatel.flickr.util.AppUtil;
 import in.co.jaypatel.flickr.util.RowClickListener;
 
+import com.tooltip.Tooltip;
+
 /**
  * Created by Jay on 5.06.2018.
  */
-public class PhotoAdapter
-        extends RecyclerView.Adapter {
+public class PhotoAdapter extends RecyclerView.Adapter {
 
     private static final int VIEW_ITEM = 1;
     private static final int VIEW_PROG = 0;
@@ -52,7 +55,9 @@ public class PhotoAdapter
                 vh.image.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        rowClickListener.onRowClicked(holder.getAdapterPosition(),
+                        rowClickListener.onRowClicked(
+                                view,
+                                holder.getAdapterPosition(),
                                 items.get(holder.getAdapterPosition()));
                     }
                 });

@@ -1,5 +1,7 @@
 package in.co.jaypatel.flickr.service;
 
+import android.os.AsyncTask;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -75,7 +77,7 @@ public final class FlickrService {
         }).start();
     }
 
-    private PhotoInfoModel getDetail(long id) throws IOException, JSONException {
+    public PhotoInfoModel getDetail(long id) throws IOException, JSONException {
         Request request = new Request.Builder()
                 .url(URL_BASE + URL_DETAIL + id)
                 .build();

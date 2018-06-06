@@ -24,8 +24,7 @@ public class DetailFragment
 
     private static final String EXTRA_ITEM = "EXTRA_ITEM";
 
-    @BindView(R.id.image)
-    private PhotoView image;
+    @BindView(R.id.image) PhotoView image;
 
     public static Fragment newInstance(PhotoModel item) {
         Bundle bundle = new Bundle();
